@@ -1,4 +1,3 @@
-/* Base Layout & Typography */
 body {
     font-family: Arial, sans-serif;
     margin: 40px;
@@ -15,7 +14,6 @@ a {
     text-decoration: none;
 }
 
-/* Card Component */
 .card {
     background: white;
     padding: 20px;
@@ -32,7 +30,6 @@ a {
     max-width: 450px;
 }
 
-/* Form Controls & Inputs */
 input, select {
     width: 100%;
     padding: 10px;
@@ -45,7 +42,6 @@ input, select {
     font-size: 16px;
 }
 
-/* Buttons */
 button {
     width: 100%;
     background: #2ecc71;
@@ -87,7 +83,6 @@ button:hover {
     background: #d35400 !important;
 }
 
-/* Data & Messages */
 table {
     width: 100%;
     border-collapse: collapse;

@@ -128,6 +128,6 @@ Stores individual tray weigh-ins recorded at the gate.
 - [x] Staff menu entry web form
 - [x] Hardware JSON API endpoint (`/api/scan`)
 - [x] Virtual Kiosk simulator for software testing
-- [ ] Hardware load cell calibration & USB scale integration
-- [ ] RFID reader integration and solenoid relay gate lock
+- [x] Hardware load cell calibration & USB scale integration
+- [x] RFID reader integration and solenoid relay gate lock
 - [ ] Advanced machine learning forecasting model (incorporating weather & day-of-week weights)

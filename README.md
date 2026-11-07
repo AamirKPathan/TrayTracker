@@ -4,7 +4,7 @@
 
 ---
 
-## 📌 Project Overview & Features
+## Project Overview & Features
 
 - **Automated Weigh & Scan Gate:** Captures student IDs and tray weights at serving area exits.
 - **Multi-Visit Aggregation:** Automatically groups multiple trips by the same student within a single meal window (Breakfast, Lunch, Dinner) to measure total meal intake rather than per-tray averages.
@@ -15,26 +15,25 @@
 
 ---
 
-## 🏗 System Architecture
+## System Architecture
 
 ```
-                               ┌─────────────────────────┐
+                               |-------------------------|
                                │  Kitchen Staff Input    │
                                │  (Schedule Menus)       │
-                               └───────────┬─────────────┘
-                                           │
-                                           ▼
-┌────────────────────────┐      ┌────────────────────────┐      ┌────────────────────────┐
+                               |-------------------------|
+                                           ⬇️
+|------------------------|      |------------------------|      |------------------------|
 │  Hardware Gate Station │      │  Flask Backend Server  │      │  Kitchen Dashboard     │
-│  - Digital Scale       ├─────►│  - SQLite Database     ├─────►│  - Live Scan Feeds     │
+│  - Digital Scale       ├─────>│  - SQLite Database     ├─────>│  - Live Scan Feeds     │
 │  - RFID Scanner        │ JSON │  - Prediction Logic    │      │  - Prep Forecasting    │
 │  - Gate Solenoid/Relay │ POST │  - CSV/Excel Exporter  │      │  - Data Exports        │
-└────────────────────────┘      └────────────────────────┘      └────────────────────────┘
+|------------------------|      |------------------------|      |------------------------|
 ```
 
 ---
 
-## 🚀 Getting Started (Software Team Setup)
+## Getting Started (Software Team Setup)
 
 ### Prerequisites
 - Python 3.9 or higher
@@ -66,7 +65,7 @@
 
 ---
 
-## 🔌 Hardware-to-Software API Contract
+## Hardware-to-Software API Contract
 
 The hardware controller (Raspberry Pi / Microcontroller) communicates with the backend via a lightweight REST endpoint.
 
@@ -99,7 +98,7 @@ The hardware controller (Raspberry Pi / Microcontroller) communicates with the b
 
 ---
 
-## 📊 Database Schema Summary
+## Database Schema Summary
 
 The project utilizes two main SQLite tables:
 
@@ -122,7 +121,7 @@ Stores individual tray weigh-ins recorded at the gate.
 
 ---
 
-## 🛠 Project Roadmap
+## Project Roadmap
 
 - [x] Flask backend & SQLite database architecture
 - [x] Staff menu entry web form

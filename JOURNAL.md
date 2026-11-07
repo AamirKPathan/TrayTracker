@@ -5,7 +5,7 @@ Added staff page.
 Ensuring Kiosk Based Software For Students.
 Ensuring App Based Software For Staff.
 
-V0.
+V0.2
 Added Support for RFID
 Added Support for scale.
 Simplified Code.

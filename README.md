@@ -33,7 +33,7 @@
 
 ---
 
-## Getting Started (Software Team Setup)
+## Getting Started Software
 
 ### Prerequisites
 - Python 3.9 or higher

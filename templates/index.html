@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>TrayTrack Kitchen Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>TrayTrack Kitchen Dashboard</h1>
+    
+    <div class="card nav-buttons">
+        <a href="/staff">Staff Menu Input</a>
+        <a href="/kiosk" class="kiosk-btn">Open Virtual Gate Kiosk</a>
+        <a href="/export">Export Daily Excel Report</a>
+    </div>
+
+    <div class="card">
+        <h2>Today's Menu & Prep Prediction</h2>
+        <p><strong>Date:</strong> {{ today }} | <strong>Active Meal Slot:</strong> {{ current_meal }}</p>
+        <p><strong>Today's Menu:</strong> {{ current_menu }}</p>
+        <p>Recommended Prep Amount:</p>
+        <div class="highlight">{{ prediction }}</div>
+        <p class="subtext">*Calculated from historical consumption averages for this menu item.</p>
+    </div>
+
+    <div class="card">
+        <h2>Recent Tray Scans</h2>
+        <table>
+            <tr><th>Timestamp</th><th>Student ID</th><th>Meal</th><th>Menu Item</th><th>Total Weight (kg)</th></tr>
+            {% for row in recent_logs %}
+            <tr>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+                <td>{{ row[5] }}</td>
+                <td>{{ row[6] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

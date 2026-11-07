@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Virtual Gate Kiosk</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="card card-kiosk">
+        <h2>Virtual Gate Kiosk</h2>
+        <p>Scan ID card or type ID. Multiple scans accumulate weight for the meal.</p>
+        
+        {% if message %}
+            <div class="success">{{ message }}</div>
+        {% endif %}
+
+        <form method="POST" id="scanForm">
+            <label>Student ID:</label>
+            <input type="text" id="student_id" name="student_id" class="kiosk-input" placeholder="Scan ID or type..." required autofocus>
+            
+            <label>Tray Weight (kg):</label>
+            <input type="number" step="0.01" name="weight_kg" class="kiosk-input" value="0.75" required>
+            
+            <button type="submit" class="kiosk-btn">Scan & Unlock Gate</button>
+        </form>
+        <br>
+        <p><a href="/">Back to Kitchen Dashboard</a></p>
+    </div>
+    
+    <script>
+        window.onload = function() {
+            document.getElementById("student_id").focus();
+        };
+    </script>
+</body>
+</html>

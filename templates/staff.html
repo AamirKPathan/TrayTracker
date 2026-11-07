@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Staff Menu Entry</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="card card-narrow">
+        <h2>Enter Upcoming Menu</h2>
+        <form method="POST">
+            <label>Date (YYYY-MM-DD):</label>
+            <input type="date" name="date" required value="{{ today }}">
+            
+            <label>Meal Slot:</label>
+            <select name="meal_slot">
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch" selected>Lunch</option>
+                <option value="Dinner">Dinner</option>
+            </select>
+            
+            <label>Menu Item Name:</label>
+            <input type="text" name="menu_item" placeholder="e.g. Chicken Alfredo" required>
+            
+            <button type="submit">Save Menu</button>
+        </form>
+        <br>
+        <p><a href="/">Back to Dashboard</a></p>
+    </div>
+</body>
+</html>
